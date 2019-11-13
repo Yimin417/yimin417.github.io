@@ -1,0 +1,23 @@
+language: node_js
+node_js: stable
+
+env:
+ global:
+   -- URL_REPO: github.com/yimin417/yimin417.github.io.git
+
+
+branches:
+  only:
+  - master
+
+before_install:
+- git config --global user.name "YOUR NAME"
+- git config --global user.email "YOUR EMAIL"
+- sed -i'' "s~https://github.com/<YOUR NAME>/<YOUR BLOG REPO>.git~https://${ACCESS_TOKEN}@github.com/<YOUR NAME>/<YOUR REPO>.git~" _config.yml
+
+install:
+- npm install hexo-cli -g
+- npm install
+
+script:
+- npm run deploy
