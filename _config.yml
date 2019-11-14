@@ -104,5 +104,5 @@ theme: hexo-theme-matery
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/yimin417/yimin417.github.io
+  repository: https://access_token@github.com/yimin417/yimin417.github.io
   branch: master
