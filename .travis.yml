@@ -4,7 +4,7 @@ node_js: stable
 
 env:
  global:
-   - URL_REPO: https://github.com/Yimin417/yimin417.github.io.git
+   - URL_REPO: https://github.com/yimin417/yimin417.github.io.git
 
 # 设置钩子只检测blog-source分支的push变动
 branches:
@@ -12,9 +12,9 @@ branches:
     - sourcode
 
 # 设置缓存文件
-# cache:
-  # directories:
-    # - node_modules
+cache:
+  directories:
+    - node_modules
 
 #在构建之前安装hexo环境
 before_install:
@@ -33,7 +33,6 @@ before_script:
 
 # 执行清缓存，生成网页操作
 script:
-  - hexo clean
   - hexo generate
   - echo ${ENV_TEST}
   - hexo deploy
