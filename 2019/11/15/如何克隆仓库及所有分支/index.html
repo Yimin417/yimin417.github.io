@@ -219,7 +219,7 @@
     }
 
     .github-corner svg {
-        color: #0f9d58;
+        color: #F062A7;
         fill: #fff;
         height: 64px;
         width: 64px;
@@ -503,19 +503,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/11/15/%E5%BC%82%E5%B8%B8/">
+                <a href="/2019/11/15/Travis%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="异常">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Travis自动部署">
                         
-                        <span class="card-title">异常</span>
+                        <span class="card-title">Travis自动部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">
                         
-                            打开ssr时，抛出异常&gt;system.exception:端口已被占用1080 的解决方案思路：找出是哪个程序占用了1080，然后关掉
+                            利用Travis CI实现博客的自动部署操作之前看了网上的教程，原本以为会很快搞定，结果还是折腾了好久。有关具体部署的步骤网上有很多文章，我
                         
                     </div>
                     <div class="publish-info">
@@ -784,6 +784,22 @@ $(function () {
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/yinghua.js"><\/script>');
+}
+</script>
+
+<script type="text/javascript">
+//只在桌面版网页启用特效
+var windowWidth = $(window).width();
+if (windowWidth > 768) {
+    document.write('<script type="text/javascript" src="/js/caidai.js"><\/script>');
+}
+</script>
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
