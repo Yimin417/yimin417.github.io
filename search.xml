@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>hexo-theme-matery</title>
+      <link href="/2019/11/18/hexo-theme-matery/"/>
+      <url>/2019/11/18/hexo-theme-matery/</url>
+      
+        <content type="html"><![CDATA[<h1 id="自定义你的博客"><a href="#自定义你的博客" class="headerlink" title="自定义你的博客"></a>自定义你的博客</h1><h2 id="记录修改hexo-theme-matery主题的过程"><a href="#记录修改hexo-theme-matery主题的过程" class="headerlink" title="记录修改hexo-theme-matery主题的过程"></a>记录修改hexo-theme-matery主题的过程</h2><p>hexo主要有两个配置文件，一个在网站根目录下面，一个在主题根目录下面，都叫做_config.yml</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>电脑开机黑屏的解决方法</title>
       <link href="/2019/11/15/%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E9%BB%91%E5%B1%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
       <url>/2019/11/15/%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E9%BB%91%E5%B1%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
