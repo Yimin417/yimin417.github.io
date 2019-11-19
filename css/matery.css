@@ -163,7 +163,7 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+    background-image: linear-gradient(to right, #6628B0 0%, #D2317E 100%);
 }
 
 .text-color {
@@ -364,8 +364,8 @@ header .go-back i {
 }
 
 .bg-cover:after {
-    -webkit-animation: rainbow 60s infinite;
-    animation: rainbow 60s infinite;
+ /*   -webkit-animation: rainbow 60s infinite;
+    animation: rainbow 60s infinite;*/
 }
 
 .bg-cover:before, .bg-cover:after {
