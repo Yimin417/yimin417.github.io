@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="归档: 2019/11, 张艺敏">
-    <meta name="description" content="归档: 2019/11 | 张艺敏">
+    <meta name="keywords" content="归档: 2019/11, 个人博客">
+    <meta name="description" content="归档: 2019/11 | 个人博客">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>归档: 2019/11 | 张艺敏</title>
+    <title>归档: 2019/11 | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -41,7 +41,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">张艺敏</span>
+                    <span class="logo-span">个人博客</span>
                 </a>
             </div>
             
@@ -117,7 +117,7 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">张艺敏</div>
+        <div class="logo-name">个人博客</div>
         <div class="logo-desc">
             
             记录学习过程
@@ -266,7 +266,7 @@
         <div class="brand">
             <div class="title center-align">
                 
-                    个人博客
+                    还在调试中
                 
             </div>
 
@@ -554,20 +554,21 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/11/15/%E5%BC%82%E5%B8%B8/">
+                        <a href="/2019/11/15/Travis%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="异常">
+                                <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Travis自动部署">
                                 
-                                <span class="card-title">异常</span>
+                                <span class="card-title">Travis自动部署</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    打开ssr时，抛出异常&gt;system.exception:端口已被占用1080 的解决方案思路：找出是哪个程序占用了1080，然后关掉即可。打开cmd，在里面运行命令
-netstat -aon|findstr &quot;1080&q
+                                    利用Travis CI实现博客的自动部署操作之前看了网上的教程，原本以为会很快搞定，结果还是折腾了好久。有关具体部署的步骤网上有很多文章，我把我踩雷的一些注意点记录一下。
+主要思路
+设置好github，为的是告知Travis CI发生的变化
                                 
                             </div>
                             <div class="publish-info">
@@ -604,21 +605,20 @@ netstat -aon|findstr &quot;1080&q
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2019/11/15/Travis%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/">
+                        <a href="/2019/11/15/%E5%BC%82%E5%B8%B8/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Travis自动部署">
+                                <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="异常">
                                 
-                                <span class="card-title">Travis自动部署</span>
+                                <span class="card-title">异常</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    利用Travis CI实现博客的自动部署操作之前看了网上的教程，原本以为会很快搞定，结果还是折腾了好久。有关具体部署的步骤网上有很多文章，我把我踩雷的一些注意点记录一下。
-主要思路
-设置好github，为的是告知Travis CI发生的变化
+                                    打开ssr时，抛出异常&gt;system.exception:端口已被占用1080 的解决方案思路：找出是哪个程序占用了1080，然后关掉即可。打开cmd，在里面运行命令
+netstat -aon|findstr &quot;1080&q
                                 
                             </div>
                             <div class="publish-info">
