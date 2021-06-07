@@ -4,10 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Travis自动部署, 个人博客">
-    <meta name="description" content="利用Travis CI实现博客的自动部署操作之前看了网上的教程，原本以为会很快搞定，结果还是折腾了好久。有关具体部署的步骤网上有很多文章，我把我踩雷的一些注意点记录一下。
-主要思路
-设置好github，为的是告知Travis CI发生的变化">
+    <meta name="keywords" content="kalilinux常见问题, 个人博客">
+    <meta name="description" content="Kali学习过程中遇到的问题root@kali:~# easy_install shodan
+bash: easy_install: command not found
+wget https://bootstrap.pypa.io/ez_s">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Travis自动部署 | 个人博客</title>
+    <title>kalilinux常见问题 | 个人博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -189,8 +189,8 @@
         
         <li><div class="divider"></div></li>
         <li>
-            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
-                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            <a href="https://github.com/Yimin417" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Follow Me
             </a>
         </li>
         
@@ -246,8 +246,8 @@
     }
 </style>
 
-<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
-   data-tooltip="Fork Me" data-position="left" data-delay="50">
+<a href="https://github.com/Yimin417" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Follow Me" data-position="left" data-delay="50">
     <svg viewBox="0 0 250 250" aria-hidden="true">
         <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
         <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
@@ -265,13 +265,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Travis自动部署
+                        kalilinux常见问题
                     </div>
                 </div>
             </div>
@@ -393,7 +393,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-11-15
+                    2021-06-07
                 </div>
 
                 
@@ -409,62 +409,31 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="利用Travis-CI实现博客的自动部署"><a href="#利用Travis-CI实现博客的自动部署" class="headerlink" title="利用Travis CI实现博客的自动部署"></a>利用Travis CI实现博客的自动部署</h1><p>操作之前看了网上的教程，原本以为会很快搞定，结果还是折腾了好久。有关具体部署的步骤网上有很多文章，我把我踩雷的一些注意点记录一下。</p>
-<h2 id="主要思路"><a href="#主要思路" class="headerlink" title="主要思路"></a>主要思路</h2><ul>
-<li>设置好github，为的是告知Travis CI发生的变化</li>
-<li>设置Travis CI，将构建好的文章部署到GitHub pages</li>
-<li>连接github与Travis CI，这两者之间是如何通信的，互相如何通知的</li>
-</ul>
-<hr>
-<p>两者之间要想实现通信，主要通过配置文件，解析配置文件时会”教”他们如何操作</p>
-<hr>
-<h3 id="第一步：获取-GitHub-Personal-Access-Token"><a href="#第一步：获取-GitHub-Personal-Access-Token" class="headerlink" title="第一步：获取 GitHub Personal Access Token"></a>第一步：获取 GitHub Personal Access Token</h3><p>点击 Github 用户settings页面 最下方的 Developer setting ，然后选择 Personal access tokens 来生成一个新的token。</p>
-<p><strong>注意：</strong> </p>
-<ol>
-<li>generate new token时，token的名字可以随便起，但是要记住，因为后面要用。</li>
-<li>select scopes时只勾选repo即可（下面的四个子选项就会自动选择），其他不勾选。然后点击generate token即可。</li>
-<li>生成的token一定要记在某个地方，比如我把token发到自己微信了，算是备份，因为后面要用到，不然刷新后，token就不能再看了，只会显示刚才创建token时生成的名字，就还得重新生成一遍。</li>
-</ol>
-<h3 id="第二步：Travis-CI相关的配置"><a href="#第二步：Travis-CI相关的配置" class="headerlink" title="第二步：Travis CI相关的配置"></a>第二步：Travis CI相关的配置</h3><p>主要包括两部分：环境变量配置与.travis.yml文件的修改</p>
-<p>公有仓库使用<a href="https://travis-ci.org/" target="_blank" rel="noopener">https://travis-ci.org/</a>进行操作，私有仓库需要使用收费的<a href="https://travis-ci.com/" target="_blank" rel="noopener">https://travis-ci.com/</a></p>
-<p><strong>配置环境变量</strong></p>
-<p>在Legacy Services Integration里面打开yimin417.github.io这个仓库，然后到settings里面设置，其他选项保持默认即可，除了在Environment Variables里面添加如下：<br>name  添加你前面在github里面创建的token名<br>value 添加在github里面生成的token<br>然后保存就好</p>
-<p><strong>配置.travis.yml文件</strong></p>
-<p>#指定构建环境是Node.js，当前版本是稳定版</p>
-<pre><code>language: node_js
-node_js: stable</code></pre><p>#设置缓存文件</p>
-<pre><code>cache:
-  directories:
-    - node_modules
-</code></pre><p>#设置钩子只检测blog-source分支的push变动</p>
-<pre><code>branches:
-  only:
-    - sourcode</code></pre><p>#在构建之前安装hexo环境</p>
-<pre><code>before_install:
-   - npm install -g hexo-cli</code></pre><p>#安装git插件和搜索功能插件</p>
-<pre><code>install:
- - npm install
-  - npm install hexo-deployer-git --save</code></pre><p>#执行清缓存，生成网页操作</p>
-<pre><code>script:
-  - hexo clean
-  - hexo generate</code></pre><p>#设置git提交名，邮箱；替换真实token到_config.yml文件</p>
-<pre><code>after_script:
-  - git config user.name &quot;yimin417&quot;
-  - git config user.email &quot;1414876235@qq.com&quot;
-#替换同目录下的_config.yml文件中github_token字符串为travis后台刚才配置的变量，注&gt;意此处sed命令用了双引号。单引号无效！
-  - sed -i &quot;s/access_token/${ACCESS_TOKEN}/g&quot;./_config.yml
-  - hexo deploy</code></pre><h3 id="第三步：对配置文件-config-yml修改"><a href="#第三步：对配置文件-config-yml修改" class="headerlink" title="第三步：对配置文件_config.yml修改"></a>第三步：对配置文件_config.yml修改</h3><p>只修改最后</p>
-<pre><code>deploy:
-  type: git
-  repository: https://access_token@github.com/yimin417/yimin417.github.io
-  branch: master</code></pre><p>#这里面的branch是写博客的分支</p>
-<p><em>注：博客源代码在新创建的分支sourcode下</em></p>
-<p>然后，所有的配置就完成了。</p>
-<h2 id="git提交相关命令及问题说明"><a href="#git提交相关命令及问题说明" class="headerlink" title="git提交相关命令及问题说明"></a>git提交相关命令及问题说明</h2><ol>
-<li>git checkout 分支名  切换分支</li>
-<li>git checkout -b 分支名 首先创建分支然后再切换到新建分支上</li>
-<li>push时提交到的是存放博客源码的分支，因为Travis监听的是这个分支的变化，我的该分支是sourcode</li>
-</ol>
+                <h1 id="Kali学习过程中遇到的问题"><a href="#Kali学习过程中遇到的问题" class="headerlink" title="Kali学习过程中遇到的问题"></a>Kali学习过程中遇到的问题</h1><pre><code>root@kali:~# easy_install shodan
+bash: easy_install: command not found
+</code></pre><p><code>wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python</code></p>
+<p>执行命令后，报错了</p>
+<p>shodan在github上的官方地址 <a href="https://github.com/achillean/shodan-python" target="_blank" rel="noopener">https://github.com/achillean/shodan-python</a> </p>
+<p>上面第一种方法不行，根据网上搜到的方法，在kail安装shodan ，步骤如下： </p>
+<pre><code>git clone https://github.com/achillean/shodan-python.git &amp;&amp; cd shodan-python
+python setup.py install</code></pre><p>执行第一行语句的时候，到安装XlsxWriter的时候，直接就不动了，也不报错</p>
+<p>所以我单独下载了XlsxWriter-1.2.6.tar.gz （去官网下载，github的速度太慢了，还老失败）</p>
+<p>然后通过解压 tar -xvf XlsxWriter-1.2.6.tar.gz </p>
+<p>直接安装，然后再次执行上面的语句，然后就成功安装shodan</p>
+<p>安装好之后，初始化shodan init  DesKvDcW5ahYIK4OSBw7jSD6rg5CRxpV (shodan官网登陆自己账号去找)</p>
+<p>蜜罐保护</p>
+<h2 id="更换源及安装leafpad"><a href="#更换源及安装leafpad" class="headerlink" title="更换源及安装leafpad"></a>更换源及安装leafpad</h2><pre><code>sudo apt-get update   # Update Packages &amp; Repositories</code></pre><pre><code>sudo apt-get install leafpad   # Install Leafpad Package</code></pre><pre><code>sudo dpkg -l leafpad   # Confirm installed Package</code></pre><pre><code>leafpad   # Open Leafpad Linux text editor application</code></pre><p>上面是安装，下面是更换源</p>
+<p> leafpad /etc/apt/sources.list </p>
+<pre><code></code></pre><pre><code>deb http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
+deb-src http://mirrors.aliyun.com/kali kali-rolling main non-free contrib
+deb http://mirrors.aliyun.com/kali-security kali-rolling/updates main contrib non-free
+deb-src http://mirrors.aliyun.com/kali-security kali-rolling/updates main contrib non-free</code></pre><p> apt-get update </p>
+<p> apt-get upgrade,</p>
+<p>安装gedit   sudo apt-get install gedit     sudo dpkg -l gedit</p>
+<p>kail配置github信息</p>
+<h2 id="下载好官网的kail-linux且安装后，需要更新"><a href="#下载好官网的kail-linux且安装后，需要更新" class="headerlink" title="下载好官网的kail linux且安装后，需要更新"></a>下载好官网的kail linux且安装后，需要更新</h2><p>默认用户名root 密码toor</p>
+<p>更新命令：apt update &amp;&amp; apt upgrage &amp;&amp; apt dist-upgrade</p>
+<h2 id="Install-gnome-terminal"><a href="#Install-gnome-terminal" class="headerlink" title="Install gnome-terminal"></a>Install gnome-terminal</h2><pre><code>sudo apt-get install gnome-terminal</code></pre><p>netstat -an</p>
 
             </div>
             <hr/>
@@ -499,9 +468,9 @@ node_js: stable</code></pre><p>#设置缓存文件</p>
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《Travis自动部署》
+                    《kalilinux常见问题》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2019/11/15/Travis%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/06/07/kalilinux%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" property="cc:attributionName"
                rel="cc:attributionURL">
                 yiminZhang
             </a> 采用
@@ -545,24 +514,24 @@ node_js: stable</code></pre><p>#设置缓存文件</p>
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/11/15/%E5%BC%82%E5%B8%B8/">
+                <a href="/2021/06/07/Travis%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="异常">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Travis自动部署">
                         
-                        <span class="card-title">异常</span>
+                        <span class="card-title">Travis自动部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">
                         
-                            打开ssr时，抛出异常&gt;system.exception:端口已被占用1080 的解决方案思路：找出是哪个程序占用了1080，然后关掉
+                            利用Travis CI实现博客的自动部署操作之前看了网上的教程，原本以为会很快搞定，结果还是折腾了好久。有关具体部署的步骤网上有很多文章，我
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-15
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-07
                         </span>
                         <span class="publish-author">
                             
@@ -582,25 +551,24 @@ node_js: stable</code></pre><p>#设置缓存文件</p>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2019/11/15/%E5%A6%82%E4%BD%95%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93%E5%8F%8A%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF/">
+                <a href="/2021/06/07/hexo-theme-matery/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="如何克隆仓库及所有分支">
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="hexo-theme-matery">
                         
-                        <span class="card-title">如何克隆仓库及所有分支</span>
+                        <span class="card-title">hexo-theme-matery</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">
                         
-                            如何从github上克隆仓库及其所有的分支适用情况：重新部署或者换电脑等
-克隆仓库（实际上已经包含master分支）git clone 要克
+                            自定义你的博客记录修改hexo-theme-matery主题的过程hexo主要有两个配置文件，一个在网站根目录下面，一个在主题根目录下面，都
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-11-15
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-07
                             </span>
                         <span class="publish-author">
                             
@@ -728,46 +696,6 @@ node_js: stable</code></pre><p>#设置缓存文件</p>
             
             
             
-            <span id="busuanzi_container_site_pv">
-                |&nbsp;<i class="fa fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
-                    class="white-color"></span>&nbsp;次
-            </span>
-            
-            
-            <span id="busuanzi_container_site_uv">
-                |&nbsp;<i class="fa fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
-                    class="white-color"></span>&nbsp;人
-            </span>
-            <br>
-            <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
-            <script>
-                var now = new Date();
-
-                function createtime() {
-                    var grt = new Date("11/5/2019 00:00:00");
-                    now.setTime(now.getTime() + 250);
-                    days = (now - grt) / 1000 / 60 / 60 / 24;
-                    dnum = Math.floor(days);
-                    hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
-                    hnum = Math.floor(hours);
-                    if (String(hnum).length == 1) {
-                        hnum = "0" + hnum;
-                    }
-                    minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
-                    mnum = Math.floor(minutes);
-                    if (String(mnum).length == 1) {
-                        mnum = "0" + mnum;
-                    }
-                    seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
-                    snum = Math.round(seconds);
-                    if (String(snum).length == 1) {
-                        snum = "0" + snum;
-                    }
-                    document.getElementById("timeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
-                    document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
-                }
-                setInterval("createtime()", 250);
-            </script>
             
             
         </div>
@@ -825,15 +753,6 @@ $(function () {
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
-<script type="text/javascript">
-//只在桌面版网页启用特效
-var windowWidth = $(window).width();
-if (windowWidth > 768) {
-    document.write('<script type="text/javascript" src="/js/yinghua.js"><\/script>');
-}
-</script>
-<script src="/js/caidai.js"></script>
-
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
