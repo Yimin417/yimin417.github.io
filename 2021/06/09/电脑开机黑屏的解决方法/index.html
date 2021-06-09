@@ -4,9 +4,11 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="异常, Behind the Dark">
-    <meta name="description" content="打开ssr时，抛出异常&amp;gt;system.exception:端口已被占用1080 的解决方案思路：找出是哪个程序占用了1080，然后关掉即可。打开cmd，在里面运行命令
-netstat -aon|findstr &amp;quot;1080&amp;q">
+    <meta name="keywords" content="电脑开机黑屏的解决方法, Behind the Dark">
+    <meta name="description" content="电脑开机后就黑屏 只有鼠标箭头 其他啥都不看见这是刚刚遇到的一个问题，记录下来，免得忘掉。
+原因：explorer的进程没有启动解决方法
+按“ctrl+shift+esc”打开任务管理器
+查看“进程”选项中是否有explorer.exe，有">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +16,7 @@ netstat -aon|findstr &amp;quot;1080&amp;q">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>异常 | Behind the Dark</title>
+    <title>电脑开机黑屏的解决方法 | Behind the Dark</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -264,13 +266,13 @@ netstat -aon|findstr &amp;quot;1080&amp;q">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        异常
+                        电脑开机黑屏的解决方法
                     </div>
                 </div>
             </div>
@@ -392,7 +394,7 @@ netstat -aon|findstr &amp;quot;1080&amp;q">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-07
+                    2021-06-09
                 </div>
 
                 
@@ -408,24 +410,13 @@ netstat -aon|findstr &amp;quot;1080&amp;q">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="打开ssr时，抛出异常-gt-system-exception-端口已被占用1080-的解决方案"><a href="#打开ssr时，抛出异常-gt-system-exception-端口已被占用1080-的解决方案" class="headerlink" title="打开ssr时，抛出异常&gt;system.exception:端口已被占用1080 的解决方案"></a>打开ssr时，抛出异常&gt;system.exception:端口已被占用1080 的解决方案</h1><h2 id="思路：找出是哪个程序占用了1080，然后关掉即可。"><a href="#思路：找出是哪个程序占用了1080，然后关掉即可。" class="headerlink" title="思路：找出是哪个程序占用了1080，然后关掉即可。"></a>思路：找出是哪个程序占用了1080，然后关掉即可。</h2><p>打开cmd，在里面运行命令</p>
-<pre><code>netstat -aon|findstr &quot;1080&quot;</code></pre><p>然后占用的程序就出来了,如本次我运行命令后的结果如下</p>
-<blockquote>
-<p>TCP    127.0.0.1:1080         127.0.0.1:1521         ESTABLISHED     9528<br>TCP    127.0.0.1:1521         127.0.0.1:1080         ESTABLISHED     5532</p>
-</blockquote>
-<p>再运行命令</p>
-<pre><code>tasklist|findstr &quot;5532&quot;</code></pre><p>得到</p>
-<blockquote>
-<p>TNSLSNR.EXE                   5532 Services                   0     14,348 K</p>
-</blockquote>
-<p>然后利用快捷键ctrl+shift+esc打开任务管理器，在【详细信息】处找到TNSLSNR.EXE 关掉即可</p>
-<p>比如上面占用的程序有两个，那么两个就都要关掉<br>接着运行命令</p>
-<pre><code>tasklist|findstr &quot;9528&quot;</code></pre><p>得到</p>
-<blockquote>
-<p>emagent.exe                   9528 Services                   0     26,880 K</p>
-</blockquote>
-<p>然后利用快捷键ctrl+shift+esc打开任务管理器，在【详细信息】处找到emagent.exe 关掉即可</p>
-<p>然后再重新打开ssr，即可正常使用。</p>
+                <h1 id="电脑开机后就黑屏-只有鼠标箭头-其他啥都不看见"><a href="#电脑开机后就黑屏-只有鼠标箭头-其他啥都不看见" class="headerlink" title="电脑开机后就黑屏 只有鼠标箭头 其他啥都不看见"></a>电脑开机后就黑屏 只有鼠标箭头 其他啥都不看见</h1><p>这是刚刚遇到的一个问题，记录下来，免得忘掉。</p>
+<h2 id="原因：explorer的进程没有启动"><a href="#原因：explorer的进程没有启动" class="headerlink" title="原因：explorer的进程没有启动"></a>原因：explorer的进程没有启动</h2><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ul>
+<li>按“ctrl+shift+esc”打开任务管理器</li>
+<li>查看“进程”选项中是否有explorer.exe，有的话，结束进程；没有的话，就不用管了。</li>
+<li>点击左上角的“文件”打开菜单，选择“新建任务（运行）”</li>
+<li>在弹出的“新建新任务”窗口，输入<strong>explorer.exe</strong>，然后点击确定，问题就解决了。</li>
+</ul>
 
             </div>
             <hr/>
@@ -460,9 +451,9 @@ netstat -aon|findstr &amp;quot;1080&amp;q">
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《异常》
+                    《电脑开机黑屏的解决方法》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/06/07/%E5%BC%82%E5%B8%B8/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/06/09/%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E9%BB%91%E5%B1%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" property="cc:attributionName"
                rel="cc:attributionURL">
                 yiminZhang
             </a> 采用
@@ -502,31 +493,33 @@ netstat -aon|findstr &amp;quot;1080&amp;q">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2021/06/07/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/">
+                <a href="/2021/06/09/%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E9%BB%91%E5%B1%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="如何搭建属于自己的博客">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="电脑开机黑屏的解决方法">
                         
-                        <span class="card-title">如何搭建属于自己的博客</span>
+                        <span class="card-title">电脑开机黑屏的解决方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            这是我的第一篇文章，将从两个方面说明如何利用github与hexo搭建属于自己的静态博客。
-前言目的：1.防止遗忘 2.整理学习过程 3.锻炼表达能力手段：依靠写作输出。
-今天是2019年11月5日，这是我第二次搭建博客，第一个被我删掉了，
+                            电脑开机后就黑屏 只有鼠标箭头 其他啥都不看见这是刚刚遇到的一个问题，记录下来，免得忘掉。
+原因：explorer的进程没有启动解决方法
+按“ctrl+shift+esc”打开任务管理器
+查看“进程”选项中是否有explorer.exe，有
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -535,6 +528,7 @@ netstat -aon|findstr &amp;quot;1080&amp;q">
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
@@ -545,26 +539,29 @@ netstat -aon|findstr &amp;quot;1080&amp;q">
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/07/Travis%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/">
+                <a href="/2021/06/09/%E5%A6%82%E4%BD%95%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93%E5%8F%8A%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Travis自动部署">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="如何克隆仓库及所有分支">
                         
-                        <span class="card-title">Travis自动部署</span>
+                        <span class="card-title">如何克隆仓库及所有分支</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            利用Travis CI实现博客的自动部署操作之前看了网上的教程，原本以为会很快搞定，结果还是折腾了好久。有关具体部署的步骤网上有很多文章，我把我踩雷的一些注意点记录一下。
-主要思路
-设置好github，为的是告知Travis CI发生的变化
+                            如何从github上克隆仓库及其所有的分支适用情况：重新部署或者换电脑等
+克隆仓库（实际上已经包含master分支）git clone 要克隆的仓库地址
+
+查看已克隆仓库有多少个分支git branch -a
+
+然后创建除master分支以
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-07
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-09
                             </span>
                         <span class="publish-author">
                             
@@ -685,8 +682,7 @@ netstat -aon|findstr &amp;quot;1080&amp;q">
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            本站由&nbsp;&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>&nbsp;基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;的
+            本站基于<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;的
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;主题搭建
             <br>
             

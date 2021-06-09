@@ -4,13 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="如何克隆仓库及所有分支, Behind the Dark">
-    <meta name="description" content="如何从github上克隆仓库及其所有的分支适用情况：重新部署或者换电脑等
-克隆仓库（实际上已经包含master分支）git clone 要克隆的仓库地址
-
-查看已克隆仓库有多少个分支git branch -a
-
-然后创建除master分支以">
+    <meta name="keywords" content="如何搭建属于自己的博客, Behind the Dark">
+    <meta name="description" content="这是我的第一篇文章，将从两个方面说明如何利用github与hexo搭建属于自己的静态博客。
+前言目的：1.防止遗忘 2.整理学习过程 3.锻炼表达能力手段：依靠写作输出。
+今天是2019年11月5日，这是我第二次搭建博客，第一个被我删掉了，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>如何克隆仓库及所有分支 | Behind the Dark</title>
+    <title>如何搭建属于自己的博客 | Behind the Dark</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -268,13 +265,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        如何克隆仓库及所有分支
+                        如何搭建属于自己的博客
                     </div>
                 </div>
             </div>
@@ -396,7 +393,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-06-07
+                    2021-06-09
                 </div>
 
                 
@@ -412,17 +409,11 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="如何从github上克隆仓库及其所有的分支"><a href="#如何从github上克隆仓库及其所有的分支" class="headerlink" title="如何从github上克隆仓库及其所有的分支"></a>如何从github上克隆仓库及其所有的分支</h1><h2 id="适用情况：重新部署或者换电脑等"><a href="#适用情况：重新部署或者换电脑等" class="headerlink" title="适用情况：重新部署或者换电脑等"></a>适用情况：重新部署或者换电脑等</h2><ul>
-<li><p>克隆仓库（实际上已经包含master分支）<br><code>git clone 要克隆的仓库地址</code></p>
-</li>
-<li><p>查看已克隆仓库有多少个分支<br><code>git branch -a</code></p>
-</li>
-<li><p>然后创建除master分支以外的其他分支，并且切换到该分支，<br>然后该分支对应的文件也就下载好了<br><code>git checkout -b 其他分支名 origin/其他分支名</code></p>
-<p>-b后面的其他分支名可以省掉</p>
-</li>
-</ul>
-<h2 id="hexo-g等命令没反应，返回usage"><a href="#hexo-g等命令没反应，返回usage" class="headerlink" title="hexo g等命令没反应，返回usage"></a>hexo g等命令没反应，返回usage</h2><p>解决方案：<br><code>npm install hexo --save</code></p>
-<p><strong>所有的提交都是在源码分支上</strong></p>
+                <p>这是我的第一篇文章，将从两个方面说明如何利用github与hexo搭建属于自己的静态博客。</p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>目的：1.防止遗忘 2.整理学习过程 3.锻炼表达能力<br>手段：依靠写作输出。</p>
+<p>今天是2019年11月5日，这是我第二次搭建博客，第一个被我删掉了，原本以为这次会很快很简单，<br>结果还是遇到了一些问题，现将整个过程加以整理成文。</p>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><p>一、搭建博客（只写整个的方法跟大步骤，具体细节可搜索相关知识点完成）<br>1.首先需要安装node.js与git<br>2.github创建项目，名字一定要以.github.io为后缀<br>3.本地创建文件夹，安装hexo<br>4.连接github与本地已创建项目</p>
+<p>二、个性化设置（主要针对更换主题）<br>根据项目在github的教程更改即可。<br><a href="https://github.com/blinkfox/hexo-theme-matery/blob/develop/README_CN.md" target="_blank" rel="noopener">点击这里</a></p>
 
             </div>
             <hr/>
@@ -457,9 +448,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《如何克隆仓库及所有分支》
+                    《如何搭建属于自己的博客》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/06/07/%E5%A6%82%E4%BD%95%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93%E5%8F%8A%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2021/06/09/%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E5%8D%9A%E5%AE%A2/" property="cc:attributionName"
                rel="cc:attributionURL">
                 yiminZhang
             </a> 采用
@@ -503,25 +494,25 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/06/07/%E6%8C%82%E8%BD%BD/">
+                <a href="/2021/06/09/%E5%BC%82%E5%B8%B8/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="挂载">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="异常">
                         
-                        <span class="card-title">挂载</span>
+                        <span class="card-title">异常</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.提一句Windows下，mount挂载，就是给磁盘分区提供一个盘符（C,D,E,…）。比如插入U盘后系统自动分配给了它I:盘符其实就是挂载，退优盘的时候进行安全弹出，其实就是卸载unmount。
-2.Linux下，不像Windows可以
+                            打开ssr时，抛出异常&gt;system.exception:端口已被占用1080 的解决方案思路：找出是哪个程序占用了1080，然后关掉即可。打开cmd，在里面运行命令
+netstat -aon|findstr &quot;1080&q
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-07
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-09
                         </span>
                         <span class="publish-author">
                             
@@ -541,27 +532,26 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/06/07/%E7%94%B5%E8%84%91%E5%BC%80%E6%9C%BA%E9%BB%91%E5%B1%8F%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">
+                <a href="/2021/06/09/Travis%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="电脑开机黑屏的解决方法">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Travis自动部署">
                         
-                        <span class="card-title">电脑开机黑屏的解决方法</span>
+                        <span class="card-title">Travis自动部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            电脑开机后就黑屏 只有鼠标箭头 其他啥都不看见这是刚刚遇到的一个问题，记录下来，免得忘掉。
-原因：explorer的进程没有启动解决方法
-按“ctrl+shift+esc”打开任务管理器
-查看“进程”选项中是否有explorer.exe，有
+                            利用Travis CI实现博客的自动部署操作之前看了网上的教程，原本以为会很快搞定，结果还是折腾了好久。有关具体部署的步骤网上有很多文章，我把我踩雷的一些注意点记录一下。
+主要思路
+设置好github，为的是告知Travis CI发生的变化
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-07
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2021-06-09
                             </span>
                         <span class="publish-author">
                             
@@ -682,8 +672,7 @@
 <footer class="page-footer bg-color">
     <div class="container row center-align">
         <div class="col s12 m8 l8 copy-right">
-            本站由&nbsp;&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>&nbsp;基于
-            <a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;的
+            本站基于<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;的
             <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>&nbsp;主题搭建
             <br>
             
